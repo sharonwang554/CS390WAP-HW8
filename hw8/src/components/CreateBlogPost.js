@@ -3,8 +3,8 @@ import { useNavigate } from "react-router";
 
 export default function CreateBlogPost() {
   const [form, setForm] = useState({
-    name: "",
-    position: "",
+    title: "",
+    content: "",
   });
   const navigate = useNavigate();
   
@@ -34,7 +34,7 @@ export default function CreateBlogPost() {
       return;
     });
   
-    setForm({ name: "", position: ""});
+    setForm({ title: "", content: ""});
     navigate("/");
   }
   
@@ -44,24 +44,24 @@ export default function CreateBlogPost() {
       <h3>Create Blog Post</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Title</label>
+          <label htmlFor="title">Title</label>
           <input
             type="text"
             className="form-control"
-            id="name"
-            value={form.name}
-            onChange={(e) => updateForm({ name: e.target.value })}
+            id="title"
+            value={form.title}
+            onChange={(e) => updateForm({ title: e.target.value })}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="position">Content</label>
+          <label htmlFor="content">Content</label>
           <textarea
             type="text"
             rows="10"
             className="form-control"
-            id="position"
-            value={form.position}
-            onChange={(e) => updateForm({ position: e.target.value })}
+            id="content"
+            value={form.content}
+            onChange={(e) => updateForm({ content: e.target.value })}
           />
         </div>
         <div className="form-group">

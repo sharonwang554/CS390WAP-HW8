@@ -40,8 +40,8 @@ recordRoutes.route("/blog/:id").get(function (req, res) {
 recordRoutes.route("/blog/create-post").post(function (req, response) {
  let db_connect = dbo.getDb();
  let myobj = {
-   name: req.body.name,
-   position: req.body.position,
+   title: req.body.title,
+   content: req.body.content,
  };
  db_connect.collection("blog-posts").insertOne(myobj, function (err, res) {
    if (err) throw err;
@@ -55,8 +55,8 @@ recordRoutes.route("/update/:id").post(function (req, response) {
  let myquery = { _id: ObjectId(req.params.id) };
  let newvalues = {
    $set: {
-     name: req.body.name,
-     position: req.body.position,
+     title: req.body.title,
+     content: req.body.content,
    },
  };
  db_connect
