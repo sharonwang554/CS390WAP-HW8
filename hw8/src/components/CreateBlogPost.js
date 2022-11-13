@@ -55,8 +55,9 @@ export default function CreateBlogPost() {
         </div>
         <div className="form-group">
           <label htmlFor="position">Content</label>
-          <input
+          <textarea
             type="text"
+            rows="10"
             className="form-control"
             id="position"
             value={form.position}
