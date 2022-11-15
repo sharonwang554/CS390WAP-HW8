@@ -6,6 +6,7 @@ export default function CreateBlogPost() {
     title: "",
     content: "",
   });
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
   
   // These methods will update the state properties.
@@ -18,6 +19,10 @@ export default function CreateBlogPost() {
   // This function will handle the submission.
   async function onSubmit(e) {
     e.preventDefault();
+
+    // if (error) {
+    //   return <div>Incorrect password!</div>
+    // }
   
     // When a post request is sent to the create url, we'll add a new record to the database.
     const newPerson = { ...form };
@@ -64,6 +69,20 @@ export default function CreateBlogPost() {
             onChange={(e) => updateForm({ content: e.target.value })}
           />
         </div>
+        {/* <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input
+            type="text"
+            className="form-control"
+            id="password"
+            value={form.password}
+            // onChange={(e) => updateForm({ title: e.target.value })}
+          />
+        </div>  */}
+        {/* <input placeholder="password"/> */}
+        {/* <br />
+        <input placeholder="password"/>
+        <br /> */}
         <div className="form-group">
           <input
             type="submit"
