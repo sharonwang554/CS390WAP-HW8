@@ -8,7 +8,7 @@ app.use(cors());
 
 app.use('/login', (req, res) => {
   res.send({
-    token: 'test123'
+    token: '<password of your choice>'
   });
 });
 
